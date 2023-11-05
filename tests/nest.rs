@@ -46,17 +46,22 @@ fn nested_good() {
 fn nested_fail() {
     let validated: Validated<_, _> = OuterValidatedFields {
         a: Good(1),
-        b: Fail(nev!["invalid b"]),
+        b: Fail(nev!["invalid b".to_string()]),
         inner: InnerValidatedFields {
             x: Good(3),
             y: Fail(nev!["invalid y", "extra error"]),
         }
+        .map_err(|e| format!("inner: {e}"))
         .into(),
     }
     .into();
 
     assert_eq!(
         validated,
-        Fail(nev!["invalid b", "invalid y", "extra error"]),
+        Fail(nev![
+            "invalid b".to_string(),
+            "inner: invalid y".to_string(),
+            "inner: extra error".to_string()
+        ]),
     );
 }

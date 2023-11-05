@@ -53,6 +53,18 @@ pub fn derive_validated_fields(input: proc_macro::TokenStream) -> proc_macro::To
         quote! { #field_ident: ::validated::Validated::Good(good.#field_ident), }
     });
 
+    let map_err = original_fields.named.iter().map(|field| {
+        let field_ident = field.ident.as_ref().unwrap();
+        quote! {
+            #field_ident: self.#field_ident.map_err(|nev| {
+                ::nonempty_collections::NEVec {
+                    head: (&mut op)(nev.head),
+                    tail: nev.tail.into_iter().map(&mut op).collect(),
+                }
+            }),
+        }
+    });
+
     let good_values = original_fields.named.iter().map(|field| {
         let field_ident = field.ident.as_ref().unwrap();
         let field_ty = &field.ty;
@@ -81,6 +93,16 @@ pub fn derive_validated_fields(input: proc_macro::TokenStream) -> proc_macro::To
     proc_macro::TokenStream::from(quote! {
         #vis struct #derived_name<E> {
             #(#derived_fields)*
+        }
+
+        impl<E> #derived_name<E> {
+            pub fn map_err<F, O>(self, mut op: O) -> #derived_name<F>
+                where O: FnMut(E) -> F
+            {
+                #derived_name::<F> {
+                    #(#map_err)*
+                }
+            }
         }
 
         impl From<#original_name> for #derived_name<::std::convert::Infallible> {
