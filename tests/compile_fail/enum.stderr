@@ -1,0 +1,11 @@
+error: ValidatedFields is not supported for enums
+ --> tests/compile_fail/enum.rs:4:1
+  |
+4 | enum Enum {
+  | ^^^^
+
+error[E0601]: `main` function not found in crate `$CRATE`
+ --> tests/compile_fail/enum.rs:7:2
+  |
+7 | }
+  |  ^ consider adding a `main` function to `$DIR/tests/compile_fail/enum.rs`

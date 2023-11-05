@@ -1,0 +1,11 @@
+error: ValidatedFields is not supported for structs with generic parameters
+ --> tests/compile_fail/generics.rs:4:1
+  |
+4 | struct Foo<X> {
+  | ^^^^^^
+
+error[E0601]: `main` function not found in crate `$CRATE`
+ --> tests/compile_fail/generics.rs:6:2
+  |
+6 | }
+  |  ^ consider adding a `main` function to `$DIR/tests/compile_fail/generics.rs`
