@@ -52,9 +52,9 @@ checksum = "af150ab688ff2122fcef229be89cb50dd66af9e01a4ff320cc137eecc9bacc38"
 
 [[package]]
 name = "nonempty-collections"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "02f11897761a4ffb16284d5d39d99a4dbbea12e7ec7cbcab6e96c41bced3971c"
+checksum = "e43b402eeca61e02116e70f2e70a60005ded2d8025c425788feb6e8fd36ddf60"
 
 [[package]]
 name = "once_cell"
