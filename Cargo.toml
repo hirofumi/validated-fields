@@ -2,7 +2,7 @@
 name = "validated-fields"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.68.0"
+rust-version = "1.70.0"
 
 [lib]
 proc-macro = true
