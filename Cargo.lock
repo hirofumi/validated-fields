@@ -52,15 +52,9 @@ checksum = "af150ab688ff2122fcef229be89cb50dd66af9e01a4ff320cc137eecc9bacc38"
 
 [[package]]
 name = "nonempty-collections"
-version = "0.1.5"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e43b402eeca61e02116e70f2e70a60005ded2d8025c425788feb6e8fd36ddf60"
-
-[[package]]
-name = "nonempty-collections"
-version = "0.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "99750ae3e103f8cbc3793e9b7eb091a9af4736c4fadf86ea0410e39405e64352"
+checksum = "ce843257ad9150ef688ce56753ef461fb2de929fa980fd5692828d1df5fe6f4d"
 
 [[package]]
 name = "once_cell"
@@ -167,11 +161,11 @@ checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
 
 [[package]]
 name = "validated"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "734f0065f244a3a8db90f1fff5680274f853ad36170c4675d3880f6f992840a9"
+checksum = "6655ffe598a4acbe9544d04d956c48a1f29e7c998a82b28a3093a93f5e3e38d3"
 dependencies = [
- "nonempty-collections 0.1.5",
+ "nonempty-collections",
 ]
 
 [[package]]
@@ -180,7 +174,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "itertools",
- "nonempty-collections 0.2.3",
+ "nonempty-collections",
  "quote",
  "syn",
  "trybuild",
