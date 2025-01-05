@@ -12,10 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: .github/workflows
-      - uses: docker://rhysd/actionlint:1.6.26
-        with:
-          args: -color
+          sparse-checkout: /.github/workflows/*.yml
+          sparse-checkout-cone-mode: false
+      - uses: hirofumi/run-actionlint@v1.7.6
   rust-versions:
     runs-on: ubuntu-latest
     outputs:
