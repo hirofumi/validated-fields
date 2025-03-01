@@ -76,6 +76,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c07626f57b1cb0ee81e5193d331209751d2e18ffa3ceaa0fd6fab63db31fafd9"
 
 [[package]]
+name = "nonempty-collections"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b7f301452dbaf00f14ca0c8204e46cf0c9a96f53543ac72cefa9b4d91c19e0ac"
+
+[[package]]
 name = "proc-macro2"
 version = "1.0.92"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -227,7 +233,7 @@ version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6655ffe598a4acbe9544d04d956c48a1f29e7c998a82b28a3093a93f5e3e38d3"
 dependencies = [
- "nonempty-collections",
+ "nonempty-collections 0.2.9",
 ]
 
 [[package]]
@@ -236,7 +242,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "itertools",
- "nonempty-collections",
+ "nonempty-collections 0.3.0",
  "quote",
  "syn",
  "trybuild",
