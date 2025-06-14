@@ -71,9 +71,9 @@ checksum = "6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d"
 
 [[package]]
 name = "nonempty-collections"
-version = "0.2.9"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c07626f57b1cb0ee81e5193d331209751d2e18ffa3ceaa0fd6fab63db31fafd9"
+checksum = "e216d0e8cf9d54fa66e5780f6e1d5dc96d1c1b3c25aeba3b6758548bcbbd8b9d"
 
 [[package]]
 name = "proc-macro2"
@@ -223,9 +223,9 @@ checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
 
 [[package]]
 name = "validated"
-version = "0.4.1"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6655ffe598a4acbe9544d04d956c48a1f29e7c998a82b28a3093a93f5e3e38d3"
+checksum = "2ca4b6e97f004fed7498c85ed3d62906835763099f3c049609cac8ed5d0ae6f9"
 dependencies = [
  "nonempty-collections",
 ]

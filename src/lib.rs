@@ -57,10 +57,8 @@ pub fn derive_validated_fields(input: proc_macro::TokenStream) -> proc_macro::To
         let field_ident = field.ident.as_ref().unwrap();
         quote! {
             #field_ident: self.#field_ident.map_err(|nev| {
-                ::nonempty_collections::NEVec {
-                    head: (&mut op)(nev.head),
-                    tail: nev.tail.into_iter().map(&mut op).collect(),
-                }
+                use ::nonempty_collections::{IntoNonEmptyIterator, NonEmptyIterator};
+                nev.into_nonempty_iter().map(&mut op).collect()
             }),
         }
     });
@@ -125,7 +123,7 @@ pub fn derive_validated_fields(input: proc_macro::TokenStream) -> proc_macro::To
 
                 #(#partition)*
 
-                match ::nonempty_collections::vector::NEVec::from_vec(all_errors) {
+                match ::nonempty_collections::vector::NEVec::try_from_vec(all_errors) {
                     None => ::validated::Validated::Good(#original_name {
                         #(#unwrap_good_values)*
                     }),
