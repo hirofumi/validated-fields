@@ -65,9 +65,9 @@ checksum = "af150ab688ff2122fcef229be89cb50dd66af9e01a4ff320cc137eecc9bacc38"
 
 [[package]]
 name = "nonempty-collections"
-version = "1.0.0"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3761f83543b22e36b7ea1145309acf9c251ef67dd8b186047f85d8cc985272d4"
+checksum = "30df10377ff18add3da6c9c084d6ce703189a8d884e752e7863d9f82b90deab4"
 
 [[package]]
 name = "proc-macro2"
