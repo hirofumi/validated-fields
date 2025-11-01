@@ -14,6 +14,6 @@ syn = "2.0"
 [dev-dependencies]
 anyhow = "1.0"
 itertools = "0.14"
-nonempty-collections = "1.0"
+nonempty-collections = "1.1"
 trybuild = { version = "1.0", features = ["diff"] }
 validated = "1.0"
