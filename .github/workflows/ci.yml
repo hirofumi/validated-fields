@@ -39,7 +39,6 @@ jobs:
           - ${{ needs.rust-versions.outputs.msrv }}
           - ${{ needs.rust-versions.outputs.rust-toolchain }}
     env:
-      CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
       RUSTFLAGS: -Dwarnings
       RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
     steps:
